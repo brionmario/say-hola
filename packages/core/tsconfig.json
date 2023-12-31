@@ -21,6 +21,7 @@
     "moduleResolution": "Bundler",
     "module": "ESNext",
     "noEmit": true,
+    "composite": true,
     /* If your code runs in the DOM: */
     "lib": ["es2022", "dom", "dom.iterable"],
   },
