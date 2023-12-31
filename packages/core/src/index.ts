@@ -22,4 +22,5 @@
  * SOFTWARE.
  */
 
-export * from './public-api';
+export {default} from './say-hola';
+export type {Translation} from './say-hola';

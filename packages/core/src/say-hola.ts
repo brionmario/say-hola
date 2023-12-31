@@ -27,7 +27,7 @@ import translations from './hola.json';
 /**
  * Interface representing a single translation.
  */
-interface Translation {
+export interface Translation {
   /**
    * ISO 639-1 language code.
    */
