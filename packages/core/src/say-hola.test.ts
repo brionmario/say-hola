@@ -35,43 +35,43 @@ describe('SayHola', () => {
     expect(sayHola).toBeInstanceOf(SayHola);
   });
 
-  it('should return a string when sayHello is called without parameters', () => {
-    const greeting: string = sayHola.sayHello();
+  it('should return a string when greet is called without parameters', () => {
+    const greeting: string = sayHola.greet();
     expect(typeof greeting).toBe('string');
   });
 
-  it('should return a greeting in a specific language when sayHello is called with a language code', () => {
-    const greeting: string = sayHola.sayHello('es');
-    expect(greeting).toContain('[es]');
+  it('should return a greeting in a specific language when greet is called with a language code', () => {
+    const greeting: string = sayHola.greet('si');
+    expect(greeting).toContain('[si]');
   });
 
-  it('should return a greeting in a specific language when sayHello is called with a language name', () => {
-    const greeting: string = sayHola.sayHello(undefined, 'Spanish');
-    expect(greeting).toContain('[es]');
+  it('should return a greeting in a specific language when greet is called with a language name', () => {
+    const greeting: string = sayHola.greet(undefined, 'Sinhala');
+    expect(greeting).toContain('[si]');
   });
 
-  it('should return a random greeting when sayHello is called with an unknown language code or name', () => {
-    const greeting: string = sayHola.sayHello('xx', 'Unknown');
+  it('should return a random greeting when greet is called with an unknown language code or name', () => {
+    const greeting: string = sayHola.greet('xx', 'Unknown');
     expect(typeof greeting).toBe('string');
   });
 
-  it('should return a string when sayHello is called with null parameters', () => {
-    const greeting: string = sayHola.sayHello(undefined, undefined);
+  it('should return a string when greet is called with null parameters', () => {
+    const greeting: string = sayHola.greet(undefined, undefined);
     expect(typeof greeting).toBe('string');
   });
 
-  it('should return a string when sayHello is called with undefined parameters', () => {
-    const greeting: string = sayHola.sayHello(undefined, undefined);
+  it('should return a string when greet is called with undefined parameters', () => {
+    const greeting: string = sayHola.greet(undefined, undefined);
     expect(typeof greeting).toBe('string');
   });
 
-  it('should not return a greeting in a specific language when sayHello is called with an incorrect language code', () => {
-    const greeting: string = sayHola.sayHello('xx');
+  it('should not return a greeting in a specific language when greet is called with an incorrect language code', () => {
+    const greeting: string = sayHola.greet('xx');
     expect(greeting).not.toContain('[xx]');
   });
 
-  it('should not return a greeting in a specific language when sayHello is called with an incorrect language name', () => {
-    const greeting: string = sayHola.sayHello(undefined, 'Unknown');
+  it('should not return a greeting in a specific language when greet is called with an incorrect language name', () => {
+    const greeting: string = sayHola.greet(undefined, 'Unknown');
     expect(greeting).not.toContain('Unknown');
   });
 });

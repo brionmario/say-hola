@@ -85,7 +85,7 @@ class SayHola {
    * @param language - The name of the language.
    * @returns A greeting in the specified or random language.
    */
-  sayHello(code?: string, language?: string): string {
+  greet(code?: string, language?: string): string {
     if (code || language) {
       const translation: Translation = this.translations.find(
         (t: Translation) => t.code === code || t.language.toLowerCase() === language?.toLowerCase(),
