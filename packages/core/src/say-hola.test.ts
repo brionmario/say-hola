@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import SayHola from './say-hola';
+import SayHola, {Translation} from './say-hola';
 
 describe('SayHola', () => {
   let sayHola: SayHola;
@@ -36,42 +36,42 @@ describe('SayHola', () => {
   });
 
   it('should return a string when greet is called without parameters', () => {
-    const greeting: string = sayHola.greet();
+    const {greeting}: Translation = sayHola.greet();
     expect(typeof greeting).toBe('string');
   });
 
   it('should return a greeting in a specific language when greet is called with a language code', () => {
-    const greeting: string = sayHola.greet('si');
-    expect(greeting).toContain('[si]');
+    const {greeting}: Translation = sayHola.greet('si');
+    expect(greeting).toContain('ආයුබෝවන්');
   });
 
   it('should return a greeting in a specific language when greet is called with a language name', () => {
-    const greeting: string = sayHola.greet(undefined, 'Sinhala');
-    expect(greeting).toContain('[si]');
+    const {greeting}: Translation = sayHola.greet(undefined, 'Sinhala');
+    expect(greeting).toContain('ආයුබෝවන්');
   });
 
   it('should return a random greeting when greet is called with an unknown language code or name', () => {
-    const greeting: string = sayHola.greet('xx', 'Unknown');
+    const {greeting}: Translation = sayHola.greet('xx', 'Unknown');
     expect(typeof greeting).toBe('string');
   });
 
   it('should return a string when greet is called with null parameters', () => {
-    const greeting: string = sayHola.greet(undefined, undefined);
+    const {greeting}: Translation = sayHola.greet(undefined, undefined);
     expect(typeof greeting).toBe('string');
   });
 
   it('should return a string when greet is called with undefined parameters', () => {
-    const greeting: string = sayHola.greet(undefined, undefined);
+    const {greeting}: Translation = sayHola.greet(undefined, undefined);
     expect(typeof greeting).toBe('string');
   });
 
   it('should not return a greeting in a specific language when greet is called with an incorrect language code', () => {
-    const greeting: string = sayHola.greet('xx');
-    expect(greeting).not.toContain('[xx]');
+    const {code}: Translation = sayHola.greet('xx');
+    expect(code).not.toContain('xx');
   });
 
   it('should not return a greeting in a specific language when greet is called with an incorrect language name', () => {
-    const greeting: string = sayHola.greet(undefined, 'Unknown');
-    expect(greeting).not.toContain('Unknown');
+    const {language}: Translation = sayHola.greet(undefined, 'Unknown');
+    expect(language).not.toContain('Unknown');
   });
 });
