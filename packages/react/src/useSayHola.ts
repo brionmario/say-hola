@@ -17,12 +17,14 @@ const useSayHola = (
     const sayHola = new SayHola();
 
     if (staticMode) {
-      setGreeting(sayHola.sayHello());
+      const {greeting} = sayHola.greet();
+      setGreeting(greeting);
       return;
     }
 
     const intervalId = setInterval(() => {
-      setGreeting(sayHola.sayHello());
+      const {greeting} = sayHola.greet();
+      setGreeting(greeting);
     }, interval || 1000);
 
     return () => {
