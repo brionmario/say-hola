@@ -41,7 +41,7 @@
     "@brionmario/prettier-config": "^0.1.0",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.0",
-    "eslint": "^8.30.0",
+    "eslint": "^8.56.0",
     "eslint-config-turbo": "^1.10.3",
     "prettier": "^2.8.1",
     "turbo": "^1.11.2"

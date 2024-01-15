@@ -27,7 +27,7 @@ import translations from './hola.json';
 /**
  * Interface representing a single translation.
  */
-interface Translation {
+export interface Translation {
   /**
    * ISO 639-1 language code.
    */
@@ -85,19 +85,27 @@ class SayHola {
    * @param language - The name of the language.
    * @returns A greeting in the specified or random language.
    */
-  sayHello(code?: string, language?: string): string {
+  greet(code?: string, language?: string): Translation {
     if (code || language) {
       const translation: Translation = this.translations.find(
         (t: Translation) => t.code === code || t.language.toLowerCase() === language?.toLowerCase(),
       ) as Translation;
 
       if (translation) {
-        return `[${translation.code}] ${translation.greeting}, ${translation.language}!`;
+        return {
+          code: translation.code,
+          greeting: translation.greeting,
+          language: translation.language,
+        };
       }
     }
 
     const {code: randomCode, greeting, language: randomLanguage} = this.getRandomTranslation();
-    return `[${randomCode}] ${greeting}, ${randomLanguage}!`;
+    return {
+      code: randomCode,
+      greeting,
+      language: randomLanguage,
+    };
   }
 }
 
