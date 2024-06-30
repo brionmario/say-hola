@@ -64,7 +64,7 @@ module.exports = [
   {
     cache: false,
     external: [/\.s?css$/],
-    input: 'dist/esm/index.d.ts',
+    input: 'dist/esm/public-api.d.ts',
     output: [{file: 'dist/index.d.ts', format: 'esm'}],
     plugins: [dts.default()],
   },

@@ -24,7 +24,7 @@
  * SOFTWARE.
  */
 
-import {ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, forwardRef, ReactElement, ReactNode} from 'react';
+import {ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, forwardRef, ReactElement} from 'react';
 import useSayHola from './useSayHola';
 
 /**
@@ -35,7 +35,7 @@ import useSayHola from './useSayHola';
  * ```jsx
  * <SayHola as='div' />
  * ```
- * In here, `Avatar` container will be an anchor element rather than the usual `div`.
+ * In here, `SayHola` container will be an anchor element rather than the usual `div`.
  */
 export type PolymorphicComponent<T extends ElementType> = ComponentPropsWithoutRef<T> & {
   as?: T;
@@ -44,12 +44,12 @@ export type PolymorphicComponent<T extends ElementType> = ComponentPropsWithoutR
 export type PolymorphicRef<T extends ElementType> = ComponentPropsWithRef<T>['ref'];
 
 /**
- * Type definition for the polymorphic Avatar component that renders an avatar.
+ * Type definition for the polymorphic SayHola component that renders a greeting.
  */
-type PolymorphicSayHolaComponent = <T extends ElementType = 'p'>(props: SayHolaProps<T>) => ReactNode;
+type PolymorphicSayHolaComponent = <T extends ElementType = 'p'>(props: SayHolaProps<T>) => ReactElement | null;
 
 /**
- * The `SayHolaProps` interface represents the props accepted by the `Avatar` component.
+ * The `SayHolaProps` interface represents the props accepted by the `SayHola` component.
  */
 export type SayHolaProps<T extends ElementType> = PolymorphicComponent<T>;
 
@@ -61,21 +61,21 @@ export type SayHolaProps<T extends ElementType> = PolymorphicComponent<T>;
  * @param props - Props for the component.
  * @returns SayHola as a React Component.
  */
-const SayHola: PolymorphicSayHolaComponent = forwardRef(
+const SayHola = forwardRef(
   <T extends ElementType>(
-    {as, children, className, key, ...rest}: SayHolaProps<T>,
+    {as, className, key, ...rest}: SayHolaProps<T>,
     ref: PolymorphicRef<T>,
-  ): ReactElement => {
+  ): ReactElement | null => {
     const Element: T | ElementType = as || 'p';
 
     const {greeting} = useSayHola();
 
     return (
-      <Element ref={ref} key={key} className={`say-hola ${className ?? ''}`} width={20} height={20} {...rest}>
+      <Element ref={ref} key={key} className={`say-hola ${className ?? ''}`} {...rest}>
         {greeting}
       </Element>
     );
   },
-);
+) as PolymorphicSayHolaComponent;
 
 export default SayHola;
