@@ -31,7 +31,6 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,json,md,mdx}\"",
     "lint": "turbo run lint",
     "publish:packages": "changeset publish",
-    "publish:release": "semantic-release",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "version:packages": "changeset version && pnpm install --lockfile-only"
@@ -40,7 +39,7 @@
     "@brionmario/eslint-plugin": "^0.2.9",
     "@brionmario/prettier-config": "^0.1.0",
     "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.0",
+    "@changesets/cli": "^2.27.1",
     "eslint": "^8.56.0",
     "eslint-config-turbo": "^1.10.3",
     "prettier": "^2.8.1",

@@ -18,7 +18,7 @@ importers:
         specifier: ^0.4.8
         version: 0.4.8
       '@changesets/cli':
-        specifier: ^2.26.0
+        specifier: ^2.27.1
         version: 2.27.1
       eslint:
         specifier: ^8.56.0
