@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Say Hola | OpenSource by Brion Mario",
+  title: "Say Hola | Brion Mario OpenSource",
   description: "A lightweight simple library that says hello to you in multiple languages.",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

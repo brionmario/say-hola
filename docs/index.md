@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Say Hola | OpenSource by Brion Mario"
+  name: "Say Hola | Brion Mario OpenSource"
   text: "A lightweight simple library that says hello to you in multiple languages."
   tagline: My great project tagline
   actions:
