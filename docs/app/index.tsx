@@ -24,16 +24,16 @@
 
 'use client';
 
+import {FC, ReactElement} from 'react';
 import LibraryUsage from '@/components/LibraryUsage';
 import Hero from '@/components/Hero';
-import {FC, PropsWithChildren, ReactElement} from 'react';
 
-export type PageProps = PropsWithChildren<{}>;
+export type PageProps = {};
 
 const Page: FC<PageProps> = (): ReactElement => (
   <div className="relative overflow-hidden">
-    <div className="max-w-7xl mx-auto px-4 flex min-h-screen flex-col items-center justify-between">
-      <div className="w-full flex flex-col min-h-screen pt-20 md:pt-40 relative overflow-hidden">
+    <div className="mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-between px-4">
+      <div className="relative flex min-h-screen w-full flex-col overflow-hidden pt-20 md:pt-40">
         <Hero />
         <LibraryUsage supportedTechnologies={['javascript', 'react', 'angular', 'vue']} />
       </div>

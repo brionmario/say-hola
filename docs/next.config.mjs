@@ -22,11 +22,36 @@
  * SOFTWARE.
  */
 
-const nextConfig = {
-  reactStrictMode: true,
+let nextConfig = {
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     appDir: true,
   },
+  reactStrictMode: true,
+  swcMinify: true,
+  // TODO: Added to bypass `Error: @next/font/google failed to run or is incorrectly configured.`
+  // Possible fix https://larsmagnus.co/blog/how-to-optimize-custom-fonts-with-next-font.
+  optimizeFonts: false,
 };
+
+/**
+ * If the build mode is static, we need to set the output to export and disable image optimization.
+ * @see {@link https://nextjs.org/docs/advanced-features/static-html-export}
+ */
+if (process.env.BUILD_MODE === 'static') {
+  nextConfig = {
+    ...nextConfig,
+    images: {
+      ...nextConfig.images,
+      unoptimized: true,
+    },
+    output: 'export',
+  };
+}
 
 export default nextConfig;

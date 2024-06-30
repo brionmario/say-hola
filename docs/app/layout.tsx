@@ -56,7 +56,7 @@ interface RootLayoutProps {
 const RootLayout: FC<RootLayoutProps> = ({children}: RootLayoutProps): ReactElement => (
   <html lang="en" suppressHydrationWarning>
     <head />
-    <body className={cn('bg-background min-h-screen font-sans antialiased', fontSans.variable)}>
+    <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <main>
           <Header />

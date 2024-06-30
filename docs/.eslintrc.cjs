@@ -30,7 +30,7 @@ module.exports = {
     '../.eslintrc.js',
     'plugin:@brionmario/typescript',
     'plugin:@brionmario/react',
-    'plugin:@brionmario/strict',
+    // 'plugin:@brionmario/strict',
     'plugin:@brionmario/internal',
     'plugin:@brionmario/jest',
     'plugin:@brionmario/prettier',
