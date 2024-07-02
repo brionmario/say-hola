@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-export {default} from './SayHola';
+export {default as SayHola} from './SayHola';
 export * from './SayHola';
 
 export {default as useSayHola} from './useSayHola';

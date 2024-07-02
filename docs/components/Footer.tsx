@@ -34,7 +34,7 @@ const Footer: FC<FooterProps> = ({children}: FooterProps) => (
       <p className="flex text-balance text-center text-sm leading-loose text-muted-foreground">
         <div className="flex">
           <span>Built by</span>{' '}
-          <span className="brion-signature">
+          <span className="brion-signature mx-1">
             <BrionSignature height={25} alt="Brion's Signature" />
           </span>
         </div>
@@ -43,7 +43,7 @@ const Footer: FC<FooterProps> = ({children}: FooterProps) => (
           href={siteConfig.links.github}
           target="_blank"
           rel="noreferrer"
-          className="font-medium underline underline-offset-4"
+          className="ml-1 font-medium underline underline-offset-4"
         >
           GitHub
         </a>

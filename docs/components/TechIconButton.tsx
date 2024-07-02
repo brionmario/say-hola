@@ -22,16 +22,20 @@
  * SOFTWARE.
  */
 
-import {HTMLAttributes, ReactElement, SVGProps} from 'react';
+import {ButtonHTMLAttributes, ReactElement, SVGProps} from 'react';
 import {cn} from '@/lib/utils';
 
-export type TechIconButtonProps = HTMLAttributes<HTMLButtonElement> & {
+export type TechIconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   icon: (props: SVGProps<SVGSVGElement>) => ReactElement;
   text: string;
 };
 
-const TechIconButton = ({icon: Icon, text, className}: TechIconButtonProps): ReactElement => (
-  <button type="button" className={cn('group flex w-full flex-col items-center text-sm font-semibold', className)}>
+const TechIconButton = ({icon: Icon, text, className, ...rest}: TechIconButtonProps): ReactElement => (
+  <button
+    type="button"
+    className={cn('group flex w-full flex-col items-center text-sm font-semibold', className)}
+    {...rest}
+  >
     <Icon className={className} />
     {text}
   </button>
