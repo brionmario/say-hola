@@ -120,18 +120,26 @@ const LibraryUsage = ({supportedTechnologies}: LibraryUsageProps): ReactElement 
             {supportedTechnologies.includes('angular') && (
               <li role="button" onClick={() => handleFrameworkChange('angular')}>
                 <TechIconButton
-                  className={cn({active: activeTab === 'angular', 'text-red-600': activeTab === 'angular'})}
+                  className={cn('cursor-not-allowed', {
+                    active: activeTab === 'angular',
+                    'text-red-600': activeTab === 'angular',
+                  })}
                   icon={AngularLogo}
-                  text="Vue"
+                  text="Angular"
+                  disabled
                 />
               </li>
             )}
             {supportedTechnologies.includes('vue') && (
               <li role="button" onClick={() => handleFrameworkChange('vue')}>
                 <TechIconButton
-                  className={cn({active: activeTab === 'vue', 'text-green-400': activeTab === 'vue'})}
+                  className={cn('cursor-not-allowed', {
+                    active: activeTab === 'vue',
+                    'text-green-400': activeTab === 'vue',
+                  })}
                   icon={VueLogo}
                   text="Vue"
+                  disabled
                 />
               </li>
             )}

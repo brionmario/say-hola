@@ -25,7 +25,6 @@
 export type SiteConfig = {
   description: string;
   links: {
-    docs: string;
     github: string;
     npm: string;
     twitter: string;
@@ -39,13 +38,12 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
   name: '👋 Say Hola',
-  description: 'Beautifully designed components built with Radix UI and Tailwind CSS.',
+  description: 'Simple library to say hello in different languages.',
   mainNav: [],
   links: {
-    docs: 'https://ui.shadcn.com',
-    github: 'https://github.com/shadcn/ui',
+    github: 'https://github.com/brionmario/say-hola',
     npm: 'https://www.npmjs.com/search?q=keywords:say-hola',
-    twitter: 'https://twitter.com/shadcn',
+    twitter: 'https://twitter.com/brion_mario',
   },
 };
 
