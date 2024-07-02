@@ -27,6 +27,7 @@ export type SiteConfig = {
   links: {
     docs: string;
     github: string;
+    npm: string;
     twitter: string;
   };
   mainNav: {
@@ -41,9 +42,10 @@ const siteConfig: SiteConfig = {
   description: 'Beautifully designed components built with Radix UI and Tailwind CSS.',
   mainNav: [],
   links: {
-    twitter: 'https://twitter.com/shadcn',
-    github: 'https://github.com/shadcn/ui',
     docs: 'https://ui.shadcn.com',
+    github: 'https://github.com/shadcn/ui',
+    npm: 'https://www.npmjs.com/search?q=keywords:say-hola',
+    twitter: 'https://twitter.com/shadcn',
   },
 };
 

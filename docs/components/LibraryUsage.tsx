@@ -102,7 +102,7 @@ const LibraryUsage = ({supportedTechnologies}: LibraryUsageProps): ReactElement 
             {supportedTechnologies.includes('javascript') && (
               <li role="button" onClick={() => handleFrameworkChange('javascript')}>
                 <TechIconButton
-                  className={cn({active: activeTab === 'javascript', 'text-yellow-200': activeTab === 'javascript'})}
+                  className={cn({active: activeTab === 'javascript', 'text-yellow-300': activeTab === 'javascript'})}
                   icon={JavaScriptLogo}
                   text="JavaScript"
                 />

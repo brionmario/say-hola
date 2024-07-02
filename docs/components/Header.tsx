@@ -28,10 +28,15 @@ import {buttonVariants} from '@/components/Button';
 import {Icons} from '@/components/Icons';
 import Navigation from '@/components/Navigation';
 import {ThemeToggle} from '@/components/ThemeToggle';
+import {cn} from '@/lib/utils';
 
-const Header = () => (
-  <nav className="max-w-7xl fixed top-4  mx-auto inset-x-0 z-50 w-[95%] lg:w-full">
-    <div className="lg:block w-full">
+export type HeaderProps = {
+  fixed?: boolean;
+};
+
+const Header = ({fixed}: HeaderProps) => (
+  <nav className={cn('inset-x-0 top-4  z-50 mx-auto w-[95%] max-w-7xl lg:w-full', {fixed})}>
+    <div className="w-full lg:block">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <Navigation items={siteConfig.mainNav} />
         <div className="flex flex-1 items-center justify-end space-x-4">
