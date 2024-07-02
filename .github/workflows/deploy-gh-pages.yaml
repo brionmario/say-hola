@@ -75,7 +75,7 @@ jobs:
         id: build-docs
         run: |
           cd docs
-          cp .env.local.example .env.local
+          cp .env.example .env.local
           echo "NEXT_PUBLIC_BASE_PATH=/${{ github.event.inputs.basePath }}" >> .env.local
           echo "BUILD_MODE=static" >> .env.local
           pnpm build
