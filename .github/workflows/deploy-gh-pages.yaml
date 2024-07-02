@@ -8,8 +8,8 @@ on:
       basePath:
         description: |
           The base path to deploy the docs to. Default is "" (https://brionmario.github.io/say-hola/).
-          Note: Include a path with a leading slash (/app) or leave empty for the root.
-        default: ''
+          Note: Include a path with a leading slash (/say-hola) or leave empty for the root.
+        default: '/say-hola'
         type: string
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -78,6 +78,10 @@ jobs:
           cp .env.example .env.local
           echo "NEXT_PUBLIC_BASE_PATH=${{ github.event.inputs.basePath }}" >> .env.local
           echo "BUILD_MODE=static" >> .env.local
+
+          # Display the contents of the .env.local file
+          cat .env.local
+
           pnpm build
 
       - name: ⚙️ Setup Pages

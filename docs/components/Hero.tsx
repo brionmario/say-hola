@@ -35,7 +35,7 @@ const Hero: FC<HeroProps> = (): ReactElement => (
     <div className="flex justify-center">
       <button
         type="button"
-        className="group relative mx-auto inline-block w-fit cursor-pointer rounded-full bg-neutral-50 p-px text-[10px] font-semibold leading-6 text-neutral-700 no-underline shadow-zinc-900 hover:shadow-2xl hover:shadow-red-500/50 dark:bg-neutral-700 dark:text-neutral-300 sm:text-xs md:shadow-2xl"
+        className="group relative mx-auto inline-block w-fit cursor-pointer rounded-full bg-neutral-50 p-px text-[10px] font-semibold leading-6 text-neutral-700 no-underline shadow-zinc-900 hover:shadow-2xl hover:shadow-red-500/50 sm:text-xs md:shadow-2xl dark:bg-neutral-700 dark:text-neutral-300"
         onClick={() => window.open(siteConfig.links.npm, '_blank', 'noopener,noreferrer')}
       >
         <span className="absolute inset-0 overflow-hidden rounded-full">
@@ -76,7 +76,7 @@ const Hero: FC<HeroProps> = (): ReactElement => (
         </span>
       </h2>
       <SayHola as="h1" className="mt-5 text-9xl font-extrabold leading-tight tracking-tighter md:text-9xl" />
-      <p className="md:text-md relative z-10 mx-auto mt-6 max-w-6xl text-center text-sm text-muted-foreground lg:text-xl">
+      <p className="md:text-md text-muted-foreground relative z-10 mx-auto mt-6 max-w-6xl text-center text-sm lg:text-xl">
         Simple library to say hello in different languages
       </p>
     </div>
