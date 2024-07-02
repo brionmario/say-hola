@@ -25,7 +25,7 @@
 'use client';
 
 import {FC, PropsWithChildren, ReactElement} from 'react';
-import SayHola from 'say-hola-react';
+import {SayHola} from 'say-hola-react';
 import siteConfig from '@/config/site';
 
 export type HeroProps = PropsWithChildren<{}>;

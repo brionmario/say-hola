@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+'use client';
+
 import {PropsWithChildren, ReactElement, useState} from 'react';
 import TechIconButton from './TechIconButton';
 import ReactLogo from './icons/ReactLogo';
